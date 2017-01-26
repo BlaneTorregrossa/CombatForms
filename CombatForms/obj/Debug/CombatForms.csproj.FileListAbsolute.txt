@@ -1,0 +1,9 @@
+c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\CombatForms\bin\Debug\CombatForms.exe.config
+c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\CombatForms\bin\Debug\CombatForms.exe
+c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\CombatForms\bin\Debug\CombatForms.pdb
+c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\CombatForms\obj\Debug\CombatForms.csprojResolveAssemblyReference.cache
+c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\CombatForms\obj\Debug\CombatForms.Form1.resources
+c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\CombatForms\obj\Debug\CombatForms.Properties.Resources.resources
+c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\CombatForms\obj\Debug\CombatForms.csproj.GenerateResource.Cache
+c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\CombatForms\obj\Debug\CombatForms.exe
+c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\CombatForms\obj\Debug\CombatForms.pdb
