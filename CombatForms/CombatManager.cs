@@ -6,27 +6,8 @@ using System.Threading.Tasks;
 
 namespace CombatForms
 {
-
-
-    delegate void CallBack();
-
-
-
-    class FSM
+    class CombatManager
     {
-
-        public FSM()
-        {
-            
-            
-
-        }
-
-
-
-
-
-
 
     }
 }

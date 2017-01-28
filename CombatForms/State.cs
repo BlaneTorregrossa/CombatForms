@@ -9,34 +9,25 @@ namespace CombatForms
 
     class State
     {
-        /*
-
-          CallBack onEnter;
-
-          //public delegate void OnEnter();
-          //public OnEnter onEnter;
-
-          CallBack onExit;
-
-          //public delegate void OnExit();
-          //public OnExit onExit;
 
 
-          public State()
+        //CallBack onEnter;
+
+        public delegate void OnEnter();
+        public OnEnter onEnter;
+
+        //CallBack onExit;
+
+        public delegate void OnExit();
+        public OnExit onExit;
+
+
+        public State()
           {
               onEnter = null;
               onExit = null;
-          }
-
-          public void AddState(CallBack EN, CallBack EX)
-          {
-
-              onEnter += EN;
-              onExit += EX;
-
-          }
-
-       */
+          }        
+       
 
 
 
