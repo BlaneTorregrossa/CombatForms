@@ -9,52 +9,69 @@ namespace CombatForms
 
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
     //
-    //          No idea what to do with AddEnterFunction and AddExitFunction to get them to work.
+    //          AddEnterFunction and AddExitFunction doesn't work (FIX IT!)
     //
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
 
 
-    class State
+    class State 
     {
 
-        public State() {}
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public State() { }
 
+        /// <summary>
+        /// Constructor that sets both onEnter and onExit delegates to have a value of null
+        /// </summary>
+        /// <param name="e"></param>
         public State(Enum e)
         {
             onEnter = null;
             onExit = null;
-
+            
         }
 
+
+
+        public delegate void Handler();
 
 
         //CallBack onEnter;
 
         public delegate void OnEnter();
         public OnEnter onEnter;
-        //onEnter = null;
 
 
         //CallBack onExit;
 
         public delegate void OnExit();
         public OnExit onExit;
-        //onExit = null;
 
 
-  // ----------------------------------------------THESE NEED TO BE FIXED------------------------------------------------------------------------
+     
 
 
+
+        /// <summary>
+        /// public function of return type void named AddEnterFunction
+        /// </summary>
+        /// <param name="d"></param>
         public void AddEnterFunction(Delegate d)
         {
-            //onEnter += d
+
         }
 
+
+        /// <summary>
+        /// public dunction of return type void named AddExitFunction
+        /// </summary>
+        /// <param name="d"></param>
         public void AddExitFunction(Delegate d)
         {
-            //onExit += d
+            
         }
 
-        
     }
 }

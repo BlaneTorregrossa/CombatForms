@@ -9,40 +9,43 @@ namespace CombatForms
 
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
     //
-    //          Put anything private to the bottom once done.
-    //          AddState Function is incomplete. (Might have to do with state class missing info)
+    //          AddState Function is incomplete. (Has to do with state class missing info)
+    //          AddTransition function is incomplete.
     //
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
 
-    public enum PlayerAction
-    {
-        INIT = 0,
-        NOACTION = 1,
-        ATTACK = 2,
-        TAKEDAMAGE = 3,
-        END = 1000,
-    }
+ 
 
-    class FSM<T>
+    class FSM /*: State*/
     {
 
-        //-------------------------Reminder Dictionary is: Dictionary<x, y>, List is: List<z>.-------------------------------------------------------------------------------------------------------------------------
+        //private State previousState;
+        //private State currentState;
+        
+
+        //Reminder: Dictionary is: Dictionary<x, y>, List is: List<z>
 
         private Dictionary<string, State> statesDictionary;
 
         private Dictionary<string, List<State>> transitionsDictionary;
 
-        public FSM/*<T>*/()
+
+
+        /// <summary>
+        /// Dictionaries for states and transitions
+        /// Do not put <T> on constructor. It's pointless with it already on the class.
+        /// </summary>
+        public FSM()
         {
-            statesDictionary = new Dictionary<string, State>();
+            statesDictionary = new Dictionary<string, State>();                             
             transitionsDictionary = new Dictionary<string, List<State>>();
         }
 
-
+        
         public void AddState(Enum e)
         {
-            State s = new State(e);
-            //statesDictionary.Add = 
+            State state = new State(e);
+            
         }
 
         public void AddTransistion()
