@@ -7,3 +7,6 @@ c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\Comba
 c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\CombatForms\obj\Debug\CombatForms.csproj.GenerateResource.Cache
 c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\CombatForms\obj\Debug\CombatForms.exe
 c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\CombatForms\obj\Debug\CombatForms.pdb
+C:\Users\Blane\Documents\GitHub\CombatForms\CombatForms\bin\Debug\CombatForms.exe.config
+C:\Users\Blane\Documents\GitHub\CombatForms\CombatForms\obj\Debug\CombatForms.exe
+C:\Users\Blane\Documents\GitHub\CombatForms\CombatForms\obj\Debug\CombatForms.pdb
