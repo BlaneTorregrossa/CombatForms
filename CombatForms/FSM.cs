@@ -9,49 +9,63 @@ namespace CombatForms
 
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
     //
-    //          AddState Function is incomplete. (Has to do with state class missing info)
+    //          Unless something from state class needs to be changed then fixing this is now the MAIN PRIORTY!
+    //          AddState Function is incomplete. (Work on this one first.)
     //          AddTransition function is incomplete.
     //
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
 
- 
 
-    class FSM /*: State*/
+
+    class FSM : State
     {
 
-        //private State previousState;
-        //private State currentState;
-        
 
-        //Reminder: Dictionary is: Dictionary<x, y>, List is: List<z>
-
-        private Dictionary<string, State> statesDictionary;
-
-        private Dictionary<string, List<State>> transitionsDictionary;
-
-
-
-        /// <summary>
-        /// Dictionaries for states and transitions
-        /// Do not put <T> on constructor. It's pointless with it already on the class.
-        /// </summary>
         public FSM()
         {
-            statesDictionary = new Dictionary<string, State>();                             
+            statesDictionary = new Dictionary<string, State>();
             transitionsDictionary = new Dictionary<string, List<State>>();
         }
 
-        
-        public void AddState(Enum e)
+        //Reminder: Dictionary is: Dictionary<x, y>, List is: List<z>
+
+        private Dictionary<string, State> statesDictionary = new Dictionary<string, State>();
+
+        private Dictionary<string, List<State>> transitionsDictionary = new Dictionary<string, List<State>>();
+
+        private string currentState;
+
+
+
+        public void AddState()
         {
-            State state = new State(e);
-            
+            State s = new State();
+
+            /*
+            statesDictionary.Add("Not it", s);
+            s.NewState += 
+            */
         }
+
 
         public void AddTransistion()
         {
-
+            State t1 = new State();
+            State t2 = new State();
+            
+            
         }
+
+
+        public void ChangeState()
+        {
+            State c1 = new State();
+            
+            
+        }
+
+
+
 
     }
 }

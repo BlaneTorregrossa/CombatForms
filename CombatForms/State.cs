@@ -9,12 +9,13 @@ namespace CombatForms
 
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
     //
-    //          AddEnterFunction and AddExitFunction doesn't work (FIX IT!)
+    //          Fixes needed for AddEnterFunction and AddExitFunction
+    //          Get something done with the Handlers.
     //
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
 
 
-    class State 
+    class State
     {
 
         /// <summary>
@@ -30,7 +31,8 @@ namespace CombatForms
         {
             onEnter = null;
             onExit = null;
-            
+            onEnter.ToString();
+            onExit.ToString();
         }
 
 
@@ -50,8 +52,12 @@ namespace CombatForms
         public OnExit onExit;
 
 
-     
-
+        private string newState;
+        public string NewState
+        {
+            get { return newState; }
+            set { newState = value; }
+        }
 
 
         /// <summary>
@@ -60,7 +66,7 @@ namespace CombatForms
         /// <param name="d"></param>
         public void AddEnterFunction(Delegate d)
         {
-
+            onEnter += d as OnEnter;
         }
 
 
@@ -70,7 +76,7 @@ namespace CombatForms
         /// <param name="d"></param>
         public void AddExitFunction(Delegate d)
         {
-            
+            onExit += d as OnExit;
         }
 
     }
