@@ -9,8 +9,6 @@ namespace CombatForms
 
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
     //
-    //          Fixes needed for AddEnterFunction and AddExitFunction
-    //          Get something done with the Handlers.
     //
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
 
@@ -32,12 +30,11 @@ namespace CombatForms
             onEnter = null;
             onExit = null;
             onEnter.ToString();
-            onExit.ToString();
         }
 
 
 
-        public delegate void Handler();
+        //public delegate void Handler();
 
 
         //CallBack onEnter;
@@ -50,14 +47,6 @@ namespace CombatForms
 
         public delegate void OnExit();
         public OnExit onExit;
-
-
-        private string newState;
-        public string NewState
-        {
-            get { return newState; }
-            set { newState = value; }
-        }
 
 
         /// <summary>

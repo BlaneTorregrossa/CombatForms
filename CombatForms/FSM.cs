@@ -10,61 +10,144 @@ namespace CombatForms
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
     //
     //          Unless something from state class needs to be changed then fixing this is now the MAIN PRIORTY!
-    //          AddState Function is incomplete. (Work on this one first.)
-    //          AddTransition function is incomplete.
+    //          Check for functions needing revisions. (Such as ChangeState, AddState and AddTransition)
+    //          
     //
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
 
+    // Reminder: NO LOOPS IN A WINFORMS APPLICATION!
 
-
-    class FSM : State
+    class FSM
     {
 
-
+        /// <summary>
+        /// Constructor that news up the lists and Dictionaries.
+        /// </summary>
         public FSM()
         {
+            s = new State();
             statesDictionary = new Dictionary<string, State>();
             transitionsDictionary = new Dictionary<string, List<State>>();
+            states = new List<State>();
         }
+
 
         //Reminder: Dictionary is: Dictionary<x, y>, List is: List<z>
+        
+        private Dictionary<string, State> statesDictionary;
+        
+        private Dictionary<string, List<State>> transitionsDictionary;
 
-        private Dictionary<string, State> statesDictionary = new Dictionary<string, State>();
+        private List<State> states;
 
-        private Dictionary<string, List<State>> transitionsDictionary = new Dictionary<string, List<State>>();
+        private bool work = true;
 
-        private string currentState;
+        private string selectedState, currentState, previousState;
+
+        State s;
 
 
-
-        public void AddState()
+        /// <summary>
+        /// Where new States for the statesDictionary are located
+        /// ----------------------STILL NEEDS WORK----------------------------
+        /// Revisions may affect how transitions work.
+        /// </summary>
+        public void NewStates()
         {
-            State s = new State();
+            //State s = new State();
 
-            /*
-            statesDictionary.Add("Not it", s);
-            s.NewState += 
-            */
+            statesDictionary.Add("NewState1", s);
+            statesDictionary.Add("NewState2", s);
+        }
+
+        /// <summary>
+        /// Where new Transitions for the transitionsDictionary are located
+        /// ----------------------STILL NEEDS WORK----------------------------
+        /// Revisions from States work may affect this
+        /// </summary>
+        public void NewTransitions()
+        {
+            transitionsDictionary.Add("transitionTest", states);
         }
 
 
-        public void AddTransistion()
+        //Note: selectedState is to be assigned outside the class.
+        public void SetCurrentState()
         {
-            State t1 = new State();
-            State t2 = new State();
-            
+            previousState = currentState;
+            currentState = selectedState;
+        }
+
+        /// <summary>
+        /// Where new States that are activated and used.
+        /// ----------------------STILL NEEDS WORK----------------------------
+        /// Revisions may affect how Transitions work.
+        /// </summary>
+        public bool AddState()
+        {
+           
+            if (work != false)
+            {
+                NewStates();
+                return true;
+            }
+            else
+                return false;
             
         }
 
 
-        public void ChangeState()
+        /// <summary>
+        /// Where new Transitions are activated and used
+        /// ----------------------STILL NEEDS WORK----------------------------
+        /// Revisions from States work may affect this
+        /// </summary>
+        public bool AddTransistion()
         {
-            State c1 = new State();
             
+            if (work != false)
+            {
+                NewTransitions();
+                return true;
+            }
+            else
+                return false;
             
         }
 
 
+
+        /// <summary>
+        /// currentState to be set to the state that the transition demands
+        /// ----------------------STILL NEEDS WORK----------------------------
+        /// This whole function needs a revision
+        /// </summary>
+        /// <returns></returns>
+        public bool ChangeState()
+        {
+            //State cs = new State();
+            SetCurrentState();
+            if (currentState == selectedState)
+            {
+
+                
+                
+
+                
+                //currentState = 
+                
+                
+                return true;
+            }
+            else
+                return false;
+
+        }
+        
+
+
+
+        
 
 
     }
