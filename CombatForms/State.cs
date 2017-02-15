@@ -22,14 +22,12 @@ namespace CombatForms
         public State() { }
 
         /// <summary>
-        /// Constructor that sets both onEnter and onExit delegates to have a value of null
+        /// 
         /// </summary>
         /// <param name="e"></param>
         public State(Enum e)
         {
-            onEnter = null;
-            onExit = null;
-            onEnter.ToString();
+            
         }
 
 
@@ -47,6 +45,15 @@ namespace CombatForms
 
         public delegate void OnExit();
         public OnExit onExit;
+
+
+        private string stateName;
+        public string StateName
+        {
+            get { return stateName; }
+            set { stateName = value; }
+        }
+
 
 
         /// <summary>

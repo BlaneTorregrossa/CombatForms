@@ -10,7 +10,7 @@ namespace CombatForms
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
     //
     //          Unless something from state class needs to be changed then fixing this is now the MAIN PRIORTY!
-    //          Check for functions needing revisions. (Such as ChangeState, AddState and AddTransition)
+    //          Check for functions needing revisions. (Such as ChangeState and AddNewTransition)
     //          
     //
     // ----------------------------------------------Needs Work------------------------------------------------------------------------
@@ -25,7 +25,7 @@ namespace CombatForms
         /// </summary>
         public FSM()
         {
-            s = new State();
+            //s = new State();
             statesDictionary = new Dictionary<string, State>();
             transitionsDictionary = new Dictionary<string, List<State>>();
             states = new List<State>();
@@ -38,116 +38,124 @@ namespace CombatForms
         
         private Dictionary<string, List<State>> transitionsDictionary;
 
-        private List<State> states;
+        // Is this needed?
+        private List<State> states;                 
 
         private bool work = true;
 
+        // Is this needed?
         private string selectedState, currentState, previousState;
 
         State s;
 
 
+
         /// <summary>
-        /// Where new States for the statesDictionary are located
         /// ----------------------STILL NEEDS WORK----------------------------
         /// Revisions may affect how transitions work.
         /// </summary>
-        public void NewStates()
+        public void AddNewStates()
         {
-            //State s = new State();
-
-            statesDictionary.Add("NewState1", s);
-            statesDictionary.Add("NewState2", s);
+            s = new State();
+            statesDictionary.Add(s.StateName, s);
         }
 
         /// <summary>
-        /// Where new Transitions for the transitionsDictionary are located
         /// ----------------------STILL NEEDS WORK----------------------------
         /// Revisions from States work may affect this
         /// </summary>
-        public void NewTransitions()
+        public void AddNewTransitions()
         {
-            transitionsDictionary.Add("transitionTest", states);
+            State transitionState1 = new State();
+            State transitionState2 = new State();
+            states.Add(transitionState1);
+            states.Add(transitionState2);
+            // Need to add actual transition
         }
 
 
-        //Note: selectedState is to be assigned outside the class.
+        // Is this needed?
         public void SetCurrentState()
         {
             previousState = currentState;
             currentState = selectedState;
         }
 
-        /// <summary>
-        /// Where new States that are activated and used.
-        /// ----------------------STILL NEEDS WORK----------------------------
-        /// Revisions may affect how Transitions work.
-        /// </summary>
-        public bool AddState()
+        public void ChangeState()
         {
-           
-            if (work != false)
-            {
-                NewStates();
-                return true;
-            }
-            else
-                return false;
-            
+
         }
 
+        ///// <summary>
+        ///// Where new States that are activated and used.
+        ///// ----------------------STILL NEEDS WORK----------------------------
+        ///// Revisions may affect how Transitions work.
+        ///// </summary>
+        //public bool AddState()
+        //{
 
-        /// <summary>
-        /// Where new Transitions are activated and used
-        /// ----------------------STILL NEEDS WORK----------------------------
-        /// Revisions from States work may affect this
-        /// </summary>
-        public bool AddTransistion()
-        {
-            
-            if (work != false)
-            {
-                NewTransitions();
-                return true;
-            }
-            else
-                return false;
-            
-        }
+        //    if (work != false)
+        //    {
+        //        NewStates();
+        //        return true;
+        //    }
+        //    else
+        //        return false;
 
+        //}
 
 
-        /// <summary>
-        /// currentState to be set to the state that the transition demands
-        /// ----------------------STILL NEEDS WORK----------------------------
-        /// This whole function needs a revision
-        /// </summary>
-        /// <returns></returns>
-        public bool ChangeState()
-        {
-            //State cs = new State();
-            SetCurrentState();
-            if (currentState == selectedState)
-            {
+        ///// <summary>
+        ///// Where new Transitions are activated and used
+        ///// ----------------------STILL NEEDS WORK----------------------------
+        ///// Revisions from States work may affect this
+        ///// </summary>
+        //public bool AddTransistion()
+        //{
 
-                
-                
+        //    if (work != false)
+        //    {
+        //        NewTransitions();
+        //        return true;
+        //    }
+        //    else
+        //        return false;
 
-                
-                //currentState = 
-                
-                
-                return true;
-            }
-            else
-                return false;
-
-        }
-        
+        //}
 
 
 
-        
+        ///// <summary>
+        ///// currentState to be set to the state that the transition demands
+        ///// ----------------------STILL NEEDS WORK----------------------------
+        ///// This whole function needs a revision
+        ///// </summary>
+        ///// <returns></returns>
+        //public bool ChangeState()
+        //{
+        //    //State cs = new State();
+        //    SetCurrentState();
+        //    if (currentState == selectedState)
+        //    {
+
+
+
+
+
+        //        //currentState = 
+
+
+        //        return true;
+        //    }
+        //    else
+        //        return false;
+
+        //}
+
+
+
+
+
 
 
     }
