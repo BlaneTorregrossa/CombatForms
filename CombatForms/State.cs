@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace CombatForms
 {
 
-    // ----------------------------------------------Needs Work------------------------------------------------------------------------
-    //
-    //
-    // ----------------------------------------------Needs Work------------------------------------------------------------------------
 
+
+    // ----------------------------------------------Notes------------------------------------------------------------------------
+    //
+    //          No longer trying to use Callbacks or Handler delegate for FSM as they are not needed here.
+    //
+    // ----------------------------------------------Notes------------------------------------------------------------------------
+
+    
 
     class State
     {
@@ -19,61 +24,30 @@ namespace CombatForms
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public State() { }
+        public State() {}
+
+        public List<string> states;         // getting warnings on this for some reason
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="e"></param>
-        public State(Enum e)
+        /// <param name="State"></param>
+       public void AddStates(string State)
         {
-            
+            if (!states.Contains(State.ToLower()))
+                states.Add(State.ToLower());
         }
 
+        //public void RemoveState(string State)
+        //{
 
+        //}
 
-        //public delegate void Handler();
-
-
-        //CallBack onEnter;
-
-        public delegate void OnEnter();
-        public OnEnter onEnter;
-
-
-        //CallBack onExit;
-
-        public delegate void OnExit();
-        public OnExit onExit;
-
-
-        private string stateName;
-        public string StateName
-        {
-            get { return stateName; }
-            set { stateName = value; }
-        }
-
-
-
-        /// <summary>
-        /// public function of return type void named AddEnterFunction
-        /// </summary>
-        /// <param name="d"></param>
-        public void AddEnterFunction(Delegate d)
-        {
-            onEnter += d as OnEnter;
-        }
-
-
-        /// <summary>
-        /// public dunction of return type void named AddExitFunction
-        /// </summary>
-        /// <param name="d"></param>
-        public void AddExitFunction(Delegate d)
-        {
-            onExit += d as OnExit;
-        }
 
     }
 }
+
+
+
+
+

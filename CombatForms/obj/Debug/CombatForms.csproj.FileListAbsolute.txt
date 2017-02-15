@@ -10,3 +10,12 @@ c:\users\blane.torregros\documents\visual studio 2015\Projects\CombatForms\Comba
 C:\Users\Blane\Documents\GitHub\CombatForms\CombatForms\bin\Debug\CombatForms.exe.config
 C:\Users\Blane\Documents\GitHub\CombatForms\CombatForms\obj\Debug\CombatForms.exe
 C:\Users\Blane\Documents\GitHub\CombatForms\CombatForms\obj\Debug\CombatForms.pdb
+C:\Users\blane.torregros\Documents\GitHub\CombatForms\CombatForms\bin\Debug\CombatForms.exe.config
+C:\Users\blane.torregros\Documents\GitHub\CombatForms\CombatForms\obj\Debug\CombatForms.exe
+C:\Users\blane.torregros\Documents\GitHub\CombatForms\CombatForms\obj\Debug\CombatForms.pdb
+C:\Users\blane.torregros\Documents\GitHub\CombatForms\CombatForms\bin\Debug\CombatForms.exe
+C:\Users\blane.torregros\Documents\GitHub\CombatForms\CombatForms\bin\Debug\CombatForms.pdb
+C:\Users\blane.torregros\Documents\GitHub\CombatForms\CombatForms\obj\Debug\CombatForms.csprojResolveAssemblyReference.cache
+C:\Users\blane.torregros\Documents\GitHub\CombatForms\CombatForms\obj\Debug\CombatForms.Form1.resources
+C:\Users\blane.torregros\Documents\GitHub\CombatForms\CombatForms\obj\Debug\CombatForms.Properties.Resources.resources
+C:\Users\blane.torregros\Documents\GitHub\CombatForms\CombatForms\obj\Debug\CombatForms.csproj.GenerateResource.Cache
