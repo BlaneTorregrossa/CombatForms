@@ -8,65 +8,78 @@ using System.Diagnostics;
 namespace CombatForms
 {
 
-
-
-
-
     // ----------------------------------------------Notes------------------------------------------------------------------------
     //
-    //          Have this work with transition and state classes outside of the FSM.
-    //          Include debugging
     //          Have a fully functioning FSM before doing other work.
     //
     // ----------------------------------------------Notes------------------------------------------------------------------------
 
-
+    //public enum TST
+    //{
+    //    init = 0,
+    //    one = 1,
+    //    two = 2,
+    //    three = 3,
+    //    end = 1000,
+    //};
 
     class FSM : Transitions
     {
-
-        //FSM test;
-
+        //State s = new State();
+        //Transitions t = new Transitions();
+        FSM test = new FSM();
+        State s0, s1, s2, s3, s1000 = new State();
         
 
-        public FSM()
+
+        public FSM() {}
+
+        
+        public void ListFSM()
         {
-            //// States Added
-            //test.AddStates("init");
-            //test.AddStates("one");
-            //test.AddStates("two");
-            //test.AddStates("three");
-            //test.AddStates("four");
-            //test.AddStates("end");
-            //// End of States Added 
+            // States Added
+            test.AddStates("init", s0);
+            test.AddStates("one", s1);
+            test.AddStates("two", s2);
+            test.AddStates("three", s3);
+            test.AddStates("end", s1000);
+            // End of States Added 
 
-            //// Transitions Added
-            //test.AddTransitions("init", "one", false);
-            //test.AddTransitions("one", "two", true);
-            //test.AddTransitions("two", "three", true);
-            //test.AddTransitions("three", "four", true);
-            //test.AddTransitions("four", "end", false);
-            //// End of Transitions Added
+            // Transitions Added
+            test.AddTransitions("init", "one", false, "init");
+            test.AddTransitions("one", "two", true, "one");
+            test.AddTransitions("two", "three", true, "two");
+            test.AddTransitions("three", "four", true, "three");
+            test.AddTransitions("four", "end", false, "four");
+            // End of Transitions Added
 
-            //// State to Transition to
-            //test.UseTransition("init");
-            //test.UseTransition("one");
-            //test.UseTransition("one");
-            //test.UseTransition("two");
-            //test.UseTransition("three");
-            //test.UseTransition("one");
-            //test.UseTransition("two");
-            //test.UseTransition("four");
-            //test.UseTransition("three");
-            //test.UseTransition("four");
-            //test.UseTransition("end");
-            //// End of states to transition to
-
+            // State to Transition to
+            test.UseTransition("init");
+            test.UseTransition("one");
+            test.UseTransition("one");
+            test.UseTransition("two");
+            test.UseTransition("three");
+            test.UseTransition("one");
+            test.UseTransition("two");
+            test.UseTransition("four");
+            test.UseTransition("three");
+            test.UseTransition("four");
+            test.UseTransition("end");
+            // End of states to transition to
 
             
+
         }
 
       
+
+        public void DebugFSM()
+        {
+            Debug.WriteLine(currentState);
+            Debug.WriteLine(currentState);
+        }
+
+
 
     }
 
