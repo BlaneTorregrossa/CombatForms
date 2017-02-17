@@ -18,7 +18,7 @@ namespace CombatForms
     // ----------------------------------------------Notes------------------------------------------------------------------------
 
 
-    class Transitions
+    class Transitions : State
     {
 
         /// <summary>
@@ -33,14 +33,12 @@ namespace CombatForms
 
         public List<string> transitions;
 
-        public List<string> states;
-
         public string currentState;
 
 
 
         /// <summary>
-        /// Creates a new transitition 
+        /// Creates a new transitition frome one state to another and another transition from the initial end state to the start state
         /// </summary>
         /// <param name="Start"></param>
         /// <param name="End"></param>
@@ -60,13 +58,12 @@ namespace CombatForms
                     transition = SelectTransition(End, Start);
                     TryAddTransition(transition);
                 }
-
             }
         }
 
 
         /// <summary>
-        /// 
+        /// Changes currentState to Goal State
         /// </summary>
         /// <param name="goal"></param>
         public void TryTransition(string goal)
@@ -82,6 +79,10 @@ namespace CombatForms
             }
         }
 
+        /// <summary>
+        /// Trys to add transition to the list of transitions
+        /// </summary>
+        /// <param name="transition"></param>
         private void TryAddTransition(string transition)
         {
 
@@ -91,6 +92,12 @@ namespace CombatForms
             }
         }
 
+        /// <summary>
+        /// Selects specific States to be picked and made a part of a transition
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <returns></returns>
         private string SelectTransition(string from, string to)
         {
             return from.ToLower() + " ===> " + to.ToLower();

@@ -10,52 +10,67 @@ namespace CombatForms
 
     // ----------------------------------------------Notes------------------------------------------------------------------------
     //
-    //          Have a fully functioning FSM before doing other work.
+    //          Have a fully functioning FSM
     //
     // ----------------------------------------------Notes------------------------------------------------------------------------
 
     public enum TST
     {
-        init = 0,
-        one = 1,
-        two = 2,
-        three = 3,
-        end = 1000,
+        INIT = 0,
+        RESULT = 1,
+        PLAYERTURN = 2,
+        OPPONENTTURN = 3,
+        FIGHTOVER = 4,
+        END = 1000,
     };
 
-    class FSM
+    class FSM : Transitions
     {
 
         FSM test;
 
-
-        public FSM()
+        public FSM(string initialState)
         {
             transitions = new List<string>();
             states = new List<string>();
+            currentState = states.First();
+            AddStates(initialState);
         }
 
-        public List<string> transitions;
-        public List<string> states;
-
-        public string currentState;
 
 
-        static public void FSMMain()
+
+        /// <summary>
+        /// Function will contain information from classes that aren't State.cs, transitions.cs, or FSM.cs
+        /// </summary>
+        public void FSMMain()
         {
-
+            
         }
 
-      
-        public void StartFSM()
+
+        public void TestFSMRun()
         {
-            if ()
-            {
-                
-            }
-        }
-      
+            //test.AddStates("init");
+            //test.AddStates("words");
+            //test.AddStates("Words");
+            //test.AddStates("moreWords");
+            //test.AddStates("noWords");
+            //test.AddStates("end");
 
+            //test.AddTransitions("init", "words", false);
+            //test.AddTransitions("words", "nowords", true);
+            //test.AddTransitions("words", "morewords", true);
+            //test.AddTransitions("morewords", "end", false);
+            //test.AddTransitions("nowords", "end", false);
+
+
+            //test.TryTransition("words");
+            //test.TryTransition("nowords");
+            //test.TryTransition("morewords");
+            //test.TryTransition("end");
+
+        }
 
     }
 

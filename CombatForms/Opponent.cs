@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace CombatForms
 {
-    
-
-    class Player : Entity
+    class Opponent : Entity
     {
 
     }

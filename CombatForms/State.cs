@@ -25,14 +25,12 @@ namespace CombatForms
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public State(string initialState)
+        public State()
         {
             states = new List<string>();
-            AddStates(initialState);
         }
 
         public List<string> states;
-
 
 
         /// <summary>
@@ -47,13 +45,7 @@ namespace CombatForms
             }
         }
 
-        public void RemoveStates(string State)
-        {
-            if (!states.Contains(State.ToLower()))
-            {
-                states.Remove(State.ToLower());
-            }
-        }
+      
 
 
 
