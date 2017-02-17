@@ -14,71 +14,47 @@ namespace CombatForms
     //
     // ----------------------------------------------Notes------------------------------------------------------------------------
 
-    //public enum TST
-    //{
-    //    init = 0,
-    //    one = 1,
-    //    two = 2,
-    //    three = 3,
-    //    end = 1000,
-    //};
-
-    class FSM : Transitions
+    public enum TST
     {
-        //State s = new State();
-        //Transitions t = new Transitions();
-        FSM test = new FSM();
-        State s0, s1, s2, s3, s1000 = new State();
-        
+        init = 0,
+        one = 1,
+        two = 2,
+        three = 3,
+        end = 1000,
+    };
+
+    class FSM
+    {
+
+        FSM test;
 
 
-        public FSM() {}
-
-        
-        public void ListFSM()
+        public FSM()
         {
-            // States Added
-            test.AddStates("init", s0);
-            test.AddStates("one", s1);
-            test.AddStates("two", s2);
-            test.AddStates("three", s3);
-            test.AddStates("end", s1000);
-            // End of States Added 
+            transitions = new List<string>();
+            states = new List<string>();
+        }
 
-            // Transitions Added
-            test.AddTransitions("init", "one", false, "init");
-            test.AddTransitions("one", "two", true, "one");
-            test.AddTransitions("two", "three", true, "two");
-            test.AddTransitions("three", "four", true, "three");
-            test.AddTransitions("four", "end", false, "four");
-            // End of Transitions Added
+        public List<string> transitions;
+        public List<string> states;
 
-            // State to Transition to
-            test.UseTransition("init");
-            test.UseTransition("one");
-            test.UseTransition("one");
-            test.UseTransition("two");
-            test.UseTransition("three");
-            test.UseTransition("one");
-            test.UseTransition("two");
-            test.UseTransition("four");
-            test.UseTransition("three");
-            test.UseTransition("four");
-            test.UseTransition("end");
-            // End of states to transition to
+        public string currentState;
 
-            
+
+        static public void FSMMain()
+        {
 
         }
 
       
-
-        public void DebugFSM()
+        public void StartFSM()
         {
-            Debug.WriteLine(currentState);
-            Debug.WriteLine(currentState);
+            if ()
+            {
+                
+            }
         }
-
+      
 
 
     }

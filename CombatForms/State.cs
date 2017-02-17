@@ -25,15 +25,11 @@ namespace CombatForms
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public State() {}
-
-        public State(Enum e)
+        public State(string initialState)
         {
             states = new List<string>();
-            dictStates = new Dictionary<string, State>();
+            AddStates(initialState);
         }
-
-        public Dictionary<string, State> dictStates;
 
         public List<string> states;
 
@@ -43,12 +39,11 @@ namespace CombatForms
         /// Trys to add a state to the list of states already in the FSM if the statealready exitsts it should not be added
         /// </summary>
         /// <param name="State"></param>
-        public void AddStates(string State, State Value)
+        public void AddStates(string State)
         {
             if (!states.Contains(State.ToLower()))
             {
                 states.Add(State.ToLower());
-                dictStates.Add(State.ToLower(), Value);
             }
         }
 
@@ -57,11 +52,10 @@ namespace CombatForms
             if (!states.Contains(State.ToLower()))
             {
                 states.Remove(State.ToLower());
-                dictStates.Remove(State.ToLower());
             }
         }
 
-        
+
 
     }
 }

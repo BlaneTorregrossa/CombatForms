@@ -18,23 +18,22 @@ namespace CombatForms
     // ----------------------------------------------Notes------------------------------------------------------------------------
 
 
-    class Transitions : State
+    class Transitions
     {
 
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public Transitions() { }
-
-        public Transitions(Enum e)
+        public Transitions()
         {
             transitions = new List<string>();
-            dictTransitions = new Dictionary<string, List<State>>();
+            states = new List<string>();
+            currentState = states.First();
         }
 
-        private Dictionary<string, List<State>> dictTransitions;
-
         public List<string> transitions;
+
+        public List<string> states;
 
         public string currentState;
 
@@ -46,7 +45,7 @@ namespace CombatForms
         /// <param name="Start"></param>
         /// <param name="End"></param>
         /// <param name="isReversable"></param>
-        public void AddTransitions(string Start, string End, bool isReversable, string startCheck)
+        public void AddTransitions(string Start, string End, bool isReversable)
         {
 
             if (states.Contains(Start.ToLower()) && (states.Contains(End.ToLower())))
@@ -70,7 +69,7 @@ namespace CombatForms
         /// 
         /// </summary>
         /// <param name="goal"></param>
-        public void UseTransition(string goal)
+        public void TryTransition(string goal)
         {
             if (states.Contains(goal.ToLower()))
             {
