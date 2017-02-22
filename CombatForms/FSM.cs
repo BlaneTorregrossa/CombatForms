@@ -8,26 +8,15 @@ using System.Diagnostics;
 namespace CombatForms
 {
 
-    // ----------------------------------------------Notes------------------------------------------------------------------------
-    //
-    //          Have a fully functioning FSM
-    //
-    // ----------------------------------------------Notes------------------------------------------------------------------------
+  
 
-    public enum TST
-    {
-        INIT = 0,
-        RESULT = 1,
-        PLAYERTURN = 2,
-        OPPONENTTURN = 3,
-        FIGHTOVER = 4,
-        END = 1000,
-    };
-
-    class FSM : Transitions
+    class FSM
     {
 
         FSM test;
+        public List<string> states;
+        public List<string> transitions;
+        public string currentState;
 
         public FSM(string initialState)
         {
@@ -38,40 +27,85 @@ namespace CombatForms
         }
 
 
+        /// <summary>
+        /// Trys to add a state to the list of states already in the FSM if the statealready exitsts it should not be added
+        /// </summary>
+        /// <param name="State"></param>
+        public void AddStates(string State)
+        {
+            if (!states.Contains(State.ToLower()))
+            {
+                states.Add(State.ToLower());
+            }
+        }
 
 
         /// <summary>
-        /// Function will contain information from classes that aren't State.cs, transitions.cs, or FSM.cs
+        /// Creates a new transitition frome one state to another and another transition from the initial end state to the start state
         /// </summary>
-        public void FSMMain()
+        /// <param name="Start"></param>
+        /// <param name="End"></param>
+        /// <param name="isReversable"></param>
+        public void AddTransitions(string Start, string End, bool isReversable)
         {
-            
+
+            if (states.Contains(Start.ToLower()) && (states.Contains(End.ToLower())))
+            {
+
+                string transition = SelectTransition(Start, End);
+
+                TryAddTransition(transition);
+
+                if (isReversable)
+                {
+                    transition = SelectTransition(End, Start);
+                    TryAddTransition(transition);
+                }
+            }
         }
 
 
-        public void TestFSMRun()
+        /// <summary>
+        /// Changes currentState to it's set Goal State
+        /// </summary>
+        /// <param name="goal"></param>
+        public void TryTransition(string goal)
         {
-            //test.AddStates("init");
-            //test.AddStates("words");
-            //test.AddStates("Words");
-            //test.AddStates("moreWords");
-            //test.AddStates("noWords");
-            //test.AddStates("end");
+            if (states.Contains(goal.ToLower()))
+            {
+                string transition = SelectTransition(currentState, goal);
 
-            //test.AddTransitions("init", "words", false);
-            //test.AddTransitions("words", "nowords", true);
-            //test.AddTransitions("words", "morewords", true);
-            //test.AddTransitions("morewords", "end", false);
-            //test.AddTransitions("nowords", "end", false);
+                if (transition.Contains(transition))
+                {
+                    currentState = goal;
+                }
+            }
+        }
 
+        /// <summary>
+        /// Trys to add transition to the list of transitions
+        /// </summary>
+        /// <param name="transition"></param>
+        private void TryAddTransition(string transition)
+        {
 
-            //test.TryTransition("words");
-            //test.TryTransition("nowords");
-            //test.TryTransition("morewords");
-            //test.TryTransition("end");
+            if (!transitions.Contains(transition.ToLower()))
+            {
+                transitions.Add(transition.ToLower());
+            }
+        }
 
+        /// <summary>
+        /// Selects specific States to be picked and made a part of a transition
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <returns></returns>
+        private string SelectTransition(string from, string to)
+        {
+            return from.ToLower() + " ===> " + to.ToLower();
         }
 
     }
-
 }
+

@@ -7,96 +7,74 @@ using System.Threading.Tasks;
 namespace CombatForms
 {
 
-    //-----------------------------------------Notes-------------------------------------------------------------
+    // ----------------------------------------------Notes------------------------------------------------------------------------
     //
-    //      This needs complete revision!
+    //     
     //
-    //-----------------------------------------Notes-------------------------------------------------------------
+    // ----------------------------------------------Notes------------------------------------------------------------------------
 
-    class Entity : IDamagable, IDamager /*, ILimbs */
+    class Entity : IDamagable, IDamager
     {
 
 
         public Entity() { }
 
-        /// <summary>
-        /// This is in need of Revision
-        /// </summary>
-        /// <param name="hp"></param>
-        /// <param name="sp"></param>
-        public Entity(float hp, float sp)
+
+        public Entity(float hp, float sp, float ap)
         {
-            Health = hp;
+            HealthPoints = hp;
             SpeedPoints = sp;
+            AttackPower = ap;
         }
 
 
-        void IDamager.Update() { }
-        void IDamagable.Update() { }
-        //void ILimbs.Update() { }
+        //void IDamager.Update() { }
+        //void IDamagable.Update() { }
 
-        /// <summary>
-        /// This is in need of revision
-        /// </summary>
-        /// <param name="damageTaken"></param>
-        /// <returns></returns>
-        public float TakeStandardDamage(float damageTaken)
+
+        public void TakeStandardDamage(float takeDamage)
         {
-            if (!LiveCheck())
+            if (HealthPoints <= 0)
             {
-                return Health;
+                //Tell the player the target is dead and that the turn was wasted
             }
             else
-                return Health += Health - (damageTaken + attackPower);
+                HealthPoints -= (5 + AttackPower);
         }
 
-        public float TakeSpeedDamage(float damageTaken)
+        public void TakeSpeedDamage(float takeDamage)
         {
-            if (!LiveCheck())
+            if (HealthPoints <= 0 || SpeedPoints <= 0)
             {
-                return SpeedPoints;
+                //Tell the player the target is dead or can't lose more speed and that the turn was wasted
             }
             else
-                return SpeedPoints += SpeedPoints - (damageTaken + attackPower);
-        }
-
-        /// <summary>
-        /// This is in need of Revision
-        /// </summary>
-        /// <param name="damageTaken"></param>
-        /// <returns></returns>
-        public float GiveDamage(float damageTaken)
-        {
-            return damageTaken;
+                SpeedPoints -= (2 + AttackPower);
         }
 
 
-        public bool LiveCheck()
+        public void GiveDamage(float DamageGiven)
         {
-            if (Health <= 0)
-                return false;
-            else if (Health >= 0)
-                return true;
-            else
-                return true;
+            
         }
 
         
 
-        /// <summary>
-        /// Can be reduced by players or opponents
+
+        /// <summary> 
+        /// Can be reduced by opposing team, If value is less than or equal to a float of 0 then player is no longer active
         /// </summary>
-        private float health;
-        public float Health
+        private float healthPoints;
+        public float HealthPoints
         {
-            get { return health; }
-            set { health = value; }
+            get { return healthPoints; }
+            set { healthPoints = value; }
         }
 
 
 
         /// <summary>
-        /// Can be reduced by players or opponents
+        /// Determines additional damage done by players and opponents
         /// </summary>
         private float attackPower;
         public float AttackPower
@@ -106,9 +84,9 @@ namespace CombatForms
         }
 
 
-        
+
         /// <summary>
-        /// Can be reduced by players or opponents
+        /// Can be reduced by oppossing team, Determines who goes first in what order in the game
         /// </summary>
         private float speedPoints;
         public float SpeedPoints
@@ -117,9 +95,9 @@ namespace CombatForms
             set { speedPoints = value; }
         }
 
-        
 
-        
+
+
 
 
 

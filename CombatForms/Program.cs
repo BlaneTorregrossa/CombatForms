@@ -8,6 +8,15 @@ namespace CombatForms
 {
     static class Program
     {
+        public enum CharactarStates
+        {
+            INIT = 0,
+            ATTACK = 1,
+            UPDATESTATUS = 2,
+            END= 1000,
+        }
+
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

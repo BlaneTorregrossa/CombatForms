@@ -11,30 +11,21 @@ namespace CombatForms
     public interface IDamager
     {
 
-        void Update();
+        //void Update();
 
+        void GiveDamage(float damageGiven);
 
-        float TakeStandardDamage(float damageTaken);
-
-        float TakeSpeedDamage(float damageTaken);
     }
-
     public interface IDamagable
     {
 
-        void Update();
+        //void Update();
 
-        float GiveDamage(float damageTaken);
+        void TakeStandardDamage(float damageTaken);
+
+        void TakeSpeedDamage(float damageTaken);
     }
 
-    //public interface ILimbs
-    //{
-
-    //    void Update();
-
-    //    float LimbCheck(float offenseLimbs, float speedLimbs);
-
-    //}
 
 
 
